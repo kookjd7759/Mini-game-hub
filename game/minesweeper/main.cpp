@@ -89,35 +89,42 @@ private:
             if (isOk(adj_x, adj_y) && mask[adj_x][adj_y] == CLOSE) DFS_open(adj_x, adj_y);
         }
     }
-    void click(int x, int y, bool isFlag) {
-        if (!isOk(x, y) || isGameOver) return;
+    bool click(int x, int y, bool isFlag) {
+        if (!isOk(x, y) || isGameOver) return true;
 
         if (isFlag) {
             if (mask[x][y] != OPEN) mask[x][y] = (mask[x][y] == FLAG ? CLOSE : FLAG);
-            return;
+            return true;
         }
-
         if (isFirst) {
             create_board(x, y);
             isFirst = false;
         }
 
-        if (mask[x][y] != CLOSE) return;
+        if (mask[x][y] != CLOSE) return true;
         if (board[x][y] == MINE) {
             isGameOver = true;
-            return;
+            return false;
         }
 
         DFS_open(x, y);
 
-        if (isWin()) isGameOver = true;
+        if (isWin()) {
+            isGameOver = true;
+            return false;
+        }
+
+        return true;
     }
-    void SEND() {
+    void SEND_board() {
         Fori(data.x) Forj(data.y) {
             if (mask[i][j] != OPEN) cout << (mask[i][j] == CLOSE ? 'c' : 'f');
             else cout << board[i][j];
         }
         cout << "\n";
+    }
+    void SEND_result() {
+        cout << (isWin() ? "clear" : "lose");
     }
 
 public:
@@ -142,11 +149,11 @@ public:
     void play() {
         while (!isGameOver) {
             int x, y, f; cin >> x >> y >> f;
-            click(x, y, (bool)f);
-            SEND();
+            if (!click(x, y, (bool)f)) break;
+            SEND_board();
         }
 
-        cout << (isWin() ? "CLEAR !!\n" : "LOSE ..\n");
+        SEND_result();
     }
 };
 

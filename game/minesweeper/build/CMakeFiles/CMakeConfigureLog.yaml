@@ -24,7 +24,7 @@ events:
       The output was:
       0
       msbuild 踰꾩쟾 17.12.12+1cce77968(.NET Framework??
-      鍮뚮뱶 ?쒖옉: 2025-01-15 ?ㅽ썑 2:46:23
+      鍮뚮뱶 ?쒖옉: 2025-01-15 ?ㅽ썑 5:12:16
       
       1 ?몃뱶??"C:\\WorkSpace\\Visual Studio Code Workspace\\Mini-game-hub\\game\\minesweeper\\build\\CMakeFiles\\3.30.2\\CompilerIdCXX\\CompilerIdCXX.vcxproj" ?꾨줈?앺듃(湲곕낯 ?\xc2\x80???낅땲??
       PrepareForBuild:
@@ -53,7 +53,7 @@ events:
           寃쎄퀬 0媛?
           ?ㅻ쪟 0媛?
       
-      寃쎄낵 ?쒓컙: 00:00:00.80
+      寃쎄낵 ?쒓컙: 00:00:00.76
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -72,8 +72,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/minesweeper/build/CMakeFiles/CMakeScratch/TryCompile-i6ffoh"
-      binary: "C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/minesweeper/build/CMakeFiles/CMakeScratch/TryCompile-i6ffoh"
+      source: "C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/minesweeper/build/CMakeFiles/CMakeScratch/TryCompile-juzugm"
+      binary: "C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/minesweeper/build/CMakeFiles/CMakeScratch/TryCompile-juzugm"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
@@ -81,40 +81,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/minesweeper/build/CMakeFiles/CMakeScratch/TryCompile-i6ffoh'
+        Change Dir: 'C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/minesweeper/build/CMakeFiles/CMakeScratch/TryCompile-juzugm'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6ce60.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_85fbc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         msbuild 踰꾩쟾 17.12.12+1cce77968(.NET Framework??
-        鍮뚮뱶 ?쒖옉: 2025-01-15 ?ㅽ썑 2:46:24
+        鍮뚮뱶 ?쒖옉: 2025-01-15 ?ㅽ썑 5:12:17
         
-        1 ?몃뱶??"C:\\WorkSpace\\Visual Studio Code Workspace\\Mini-game-hub\\game\\minesweeper\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6ffoh\\cmTC_6ce60.vcxproj" ?꾨줈?앺듃(湲곕낯 ?\xc2\x80???낅땲??
+        1 ?몃뱶??"C:\\WorkSpace\\Visual Studio Code Workspace\\Mini-game-hub\\game\\minesweeper\\build\\CMakeFiles\\CMakeScratch\\TryCompile-juzugm\\cmTC_85fbc.vcxproj" ?꾨줈?앺듃(湲곕낯 ?\xc2\x80???낅땲??
         PrepareForBuild:
-          "cmTC_6ce60.dir\\Debug\\" ?붾젆?곕━瑜?留뚮뱾怨??덉뒿?덈떎.
+          "cmTC_85fbc.dir\\Debug\\" ?붾젆?곕━瑜?留뚮뱾怨??덉뒿?덈떎.
           援ъ“??異쒕젰???ъ슜?????덉뒿?덈떎. 而댄뙆?쇰윭 吏꾨떒???쒖떇?\xc2\x80 ?ㅻ쪟 怨꾩링 援ъ“瑜?諛섏쁺?⑸땲?? ?먯꽭???댁슜?\xc2\x80 https://aka.ms/cpp/structured-output??李몄“?섏꽭??
-          "C:\\WorkSpace\\Visual Studio Code Workspace\\Mini-game-hub\\game\\minesweeper\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6ffoh\\Debug\\" ?붾젆?곕━瑜?留뚮뱾怨??덉뒿?덈떎.
-          "cmTC_6ce60.dir\\Debug\\cmTC_6ce60.tlog\\" ?붾젆?곕━瑜?留뚮뱾怨??덉뒿?덈떎.
+          "C:\\WorkSpace\\Visual Studio Code Workspace\\Mini-game-hub\\game\\minesweeper\\build\\CMakeFiles\\CMakeScratch\\TryCompile-juzugm\\Debug\\" ?붾젆?곕━瑜?留뚮뱾怨??덉뒿?덈떎.
+          "cmTC_85fbc.dir\\Debug\\cmTC_85fbc.tlog\\" ?붾젆?곕━瑜?留뚮뱾怨??덉뒿?덈떎.
         InitializeBuildStatus:
-          "AlwaysCreate"??媛\xc2\x80) 吏\xc2\x80?뺣릺?덇린 ?뚮Ц??"cmTC_6ce60.dir\\Debug\\cmTC_6ce60.tlog\\unsuccessfulbuild"??瑜? 留뚮뱾怨??덉뒿?덈떎.
-          "cmTC_6ce60.dir\\Debug\\cmTC_6ce60.tlog\\unsuccessfulbuild"???곌껐(touching)?섍퀬 ?덉뒿?덈떎.
+          "AlwaysCreate"??媛\xc2\x80) 吏\xc2\x80?뺣릺?덇린 ?뚮Ц??"cmTC_85fbc.dir\\Debug\\cmTC_85fbc.tlog\\unsuccessfulbuild"??瑜? 留뚮뱾怨??덉뒿?덈떎.
+          "cmTC_85fbc.dir\\Debug\\cmTC_85fbc.tlog\\unsuccessfulbuild"???곌껐(touching)?섍퀬 ?덉뒿?덈떎.
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6ce60.dir\\Debug\\\\" /Fd"cmTC_6ce60.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_85fbc.dir\\Debug\\\\" /Fd"cmTC_85fbc.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ 理쒖쟻??而댄뙆?쇰윭 踰꾩쟾 19.42.34435(x64)
           Copyright (c) Microsoft Corporation. All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6ce60.dir\\Debug\\\\" /Fd"cmTC_6ce60.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_85fbc.dir\\Debug\\\\" /Fd"cmTC_85fbc.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\WorkSpace\\Visual Studio Code Workspace\\Mini-game-hub\\game\\minesweeper\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6ffoh\\Debug\\cmTC_6ce60.exe" /INCREMENTAL /ILK:"cmTC_6ce60.dir\\Debug\\cmTC_6ce60.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/minesweeper/build/CMakeFiles/CMakeScratch/TryCompile-i6ffoh/Debug/cmTC_6ce60.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/minesweeper/build/CMakeFiles/CMakeScratch/TryCompile-i6ffoh/Debug/cmTC_6ce60.lib" /MACHINE:X64  /machine:x64 cmTC_6ce60.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_6ce60.vcxproj -> C:\\WorkSpace\\Visual Studio Code Workspace\\Mini-game-hub\\game\\minesweeper\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6ffoh\\Debug\\cmTC_6ce60.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\WorkSpace\\Visual Studio Code Workspace\\Mini-game-hub\\game\\minesweeper\\build\\CMakeFiles\\CMakeScratch\\TryCompile-juzugm\\Debug\\cmTC_85fbc.exe" /INCREMENTAL /ILK:"cmTC_85fbc.dir\\Debug\\cmTC_85fbc.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/minesweeper/build/CMakeFiles/CMakeScratch/TryCompile-juzugm/Debug/cmTC_85fbc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/minesweeper/build/CMakeFiles/CMakeScratch/TryCompile-juzugm/Debug/cmTC_85fbc.lib" /MACHINE:X64  /machine:x64 cmTC_85fbc.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_85fbc.vcxproj -> C:\\WorkSpace\\Visual Studio Code Workspace\\Mini-game-hub\\game\\minesweeper\\build\\CMakeFiles\\CMakeScratch\\TryCompile-juzugm\\Debug\\cmTC_85fbc.exe
         FinalizeBuildStatus:
-          "cmTC_6ce60.dir\\Debug\\cmTC_6ce60.tlog\\unsuccessfulbuild" ?뚯씪????젣?섍퀬 ?덉뒿?덈떎.
-          "cmTC_6ce60.dir\\Debug\\cmTC_6ce60.tlog\\cmTC_6ce60.lastbuildstate"???곌껐(touching)?섍퀬 ?덉뒿?덈떎.
-        "C:\\WorkSpace\\Visual Studio Code Workspace\\Mini-game-hub\\game\\minesweeper\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6ffoh\\cmTC_6ce60.vcxproj" ?꾨줈?앺듃瑜?鍮뚮뱶?덉뒿?덈떎(湲곕낯 ?\xc2\x80??.
+          "cmTC_85fbc.dir\\Debug\\cmTC_85fbc.tlog\\unsuccessfulbuild" ?뚯씪????젣?섍퀬 ?덉뒿?덈떎.
+          "cmTC_85fbc.dir\\Debug\\cmTC_85fbc.tlog\\cmTC_85fbc.lastbuildstate"???곌껐(touching)?섍퀬 ?덉뒿?덈떎.
+        "C:\\WorkSpace\\Visual Studio Code Workspace\\Mini-game-hub\\game\\minesweeper\\build\\CMakeFiles\\CMakeScratch\\TryCompile-juzugm\\cmTC_85fbc.vcxproj" ?꾨줈?앺듃瑜?鍮뚮뱶?덉뒿?덈떎(湲곕낯 ?\xc2\x80??.
         
         鍮뚮뱶?덉뒿?덈떎.
             寃쎄퀬 0媛?
             ?ㅻ쪟 0媛?
         
-        寃쎄낵 ?쒓컙: 00:00:00.74
+        寃쎄낵 ?쒓컙: 00:00:00.71
         
       exitCode: 0
   -
