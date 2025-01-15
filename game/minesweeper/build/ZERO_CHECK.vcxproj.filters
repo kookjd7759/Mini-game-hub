@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\WorkSpace\Visual Studio Code Workspace\Mini-game-hub\game\minesweeper\build\CMakeFiles\a2a4539ac028454083800a00b5101799\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E5CF815D-97CE-3051-A04C-193D270A4DB1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
