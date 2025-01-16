@@ -9,20 +9,34 @@ from connector import *
 
 class Minesweeper_Window(QWidget):
     CELL_SIZE = 32
-
-    def __init__(self):
-        super().__init__()
-        self.img_path = {
-            'c' : os.getcwd() + '\\Mini-game-hub\\src\\minesweeper\\close.png',
-            'f' : os.getcwd() + '\\Mini-game-hub\\src\\minesweeper\\flag.png',
-        }
+    
+    def load_img(self):
+        src_path = os.getcwd() + '\\Mini-game-hub\\src\\minesweeper'
+        self.img_path = { 'c' : src_path + '\\close.png', 'f' : src_path + '\\flag.png', }
         for i in range(0, 9):
-            self.img_path[f'{i}'] = os.getcwd() + f'\\Mini-game-hub\\src\\minesweeper\\Number_{i}.png'
-        self.game = MINESWEEPER_EXE()
-        send(self.game, '0')
-        self.initUI(8, 10)
+            self.img_path[f'{i}'] = src_path + f'\\Number_{i}.png'
 
-    def initUI(self, x : int, y : int):
+    def start(self, level : int):
+        self.game = MINESWEEPER_EXE()
+        send(self.game, f'{level}')
+        if level == 0:
+            self.initUI(8, 10, level)
+        elif level == 1:
+            self.initUI(14, 18, level)
+        else:
+            self.initUI(20, 24, level)
+    
+    def restart(self):
+        self.close()
+        self.__init__(self.level_select.currentIndex())
+        self.show()
+
+    def __init__(self, level : int = 0):
+        super().__init__()
+        self.load_img()
+        self.start(level)
+
+    def initUI(self, x : int, y : int, level : int):
         self.x = x
         self.y = y
         self.setWindowTitle("Minesweeper")
@@ -32,12 +46,14 @@ class Minesweeper_Window(QWidget):
         vbox.setContentsMargins(0, 0, 0, 0)
 
         hbox_info = QHBoxLayout()
-        self.level_selcet = QComboBox(self)
-        self.level_selcet.addItem('BEGINNER')
-        self.level_selcet.addItem('INTERMEDIATE')
-        self.level_selcet.addItem('ADVANCED')
-        self.level_selcet.setFixedWidth(130)
-        hbox_info.addWidget(self.level_selcet, 0, Qt.AlignLeft)
+        self.level_select = QComboBox(self)
+        self.level_select.addItem('BEGINNER')
+        self.level_select.addItem('INTERMEDIATE')
+        self.level_select.addItem('ADVANCED')
+        self.level_select.setCurrentIndex(level)
+        self.level_select.currentIndexChanged.connect(self.level_change)
+        self.level_select.setFixedWidth(130)
+        hbox_info.addWidget(self.level_select, 0, Qt.AlignLeft)
         vbox.addLayout(hbox_info)
 
         self.board = [[None for _ in range(y)] for _ in range(x)]
@@ -56,8 +72,10 @@ class Minesweeper_Window(QWidget):
 
     def update(self):
         st = read(self.game)
-        if st == "clear" or st == "lose" : 
+        if st == "clear" or st == "lose" :
             self.gameEnd_dialog(st)
+            return
+        
         line = [st[i:i + self.y] for i in range(0, len(st), self.y)]
         for i in range(self.x):
             for j in range(self.y):
@@ -89,12 +107,12 @@ class Minesweeper_Window(QWidget):
     
     def gameEnd_dialog(self, st):
         msgBox = QMessageBox(self)
-        msgBox.setIcon(QMessageBox.Information)
+        msgBox.setWindowTitle("Game Over")
         msgBox.setText(st)
-        msgBox.setInformativeText("게임을 다시 시작하시겠습니까?")
-        msgBox.setWindowTitle("게임 종료")
+        label = msgBox.findChild(QLabel, "qt_msgbox_label")
+        label.setStyleSheet("font-size: 16px; font-weight: bold;")
         
-        restartButton = QPushButton("재시작")
+        restartButton = QPushButton("Restart")
         msgBox.addButton(restartButton, QMessageBox.ActionRole)
         exitButton = msgBox.addButton(QMessageBox.Close)
         
@@ -102,12 +120,12 @@ class Minesweeper_Window(QWidget):
 
         if msgBox.clickedButton() == restartButton:
             self.restart()
+        elif msgBox.clickedButton() == exitButton:
+            self.close()
 
-    def restart(self):
-        self.game = MINESWEEPER_EXE()
-        send(self.game, '0')
-        self.initUI(8, 10)
-        self.show()
+    def level_change(self):
+        self.restart()
+
 
 
 if __name__ == '__main__':
