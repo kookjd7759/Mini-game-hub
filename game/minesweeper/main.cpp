@@ -89,32 +89,29 @@ private:
             if (isOk(adj_x, adj_y) && mask[adj_x][adj_y] == CLOSE) DFS_open(adj_x, adj_y);
         }
     }
-    bool click(int x, int y, bool isFlag) {
-        if (!isOk(x, y) || isGameOver) return true;
+    void click(int x, int y, bool isFlag) {
+        if (!isOk(x, y) || isGameOver) return;
 
         if (isFlag) {
             if (mask[x][y] != OPEN) mask[x][y] = (mask[x][y] == FLAG ? CLOSE : FLAG);
-            return true;
+            return;
         }
+
         if (isFirst) {
             create_board(x, y);
             isFirst = false;
         }
 
-        if (mask[x][y] != CLOSE) return true;
+        if (mask[x][y] != CLOSE) return;
         if (board[x][y] == MINE) {
+            mask[x][y] = OPEN;
             isGameOver = true;
-            return false;
+            return;
         }
 
         DFS_open(x, y);
 
-        if (isWin()) {
-            isGameOver = true;
-            return false;
-        }
-
-        return true;
+        if (isWin()) isGameOver = true;
     }
     void SEND_board() {
         Fori(data.x) Forj(data.y) {
@@ -123,9 +120,7 @@ private:
         }
         cout << "\n";
     }
-    void SEND_result() {
-        cout << (isWin() ? "clear" : "lose");
-    }
+    void SEND_result() { cout << (!isGameOver ? "continue" : isWin() ? "clear" : "lose") << "\n"; }
 
 public:
     Minesweeper(Level lev) {
@@ -149,11 +144,10 @@ public:
     void play() {
         while (!isGameOver) {
             int x, y, f; cin >> x >> y >> f;
-            if (!click(x, y, (bool)f)) break;
+            click(x, y, (bool)f);
             SEND_board();
+            SEND_result();
         }
-
-        SEND_result();
     }
 };
 

@@ -12,7 +12,11 @@ class Minesweeper_Window(QWidget):
     
     def load_img(self):
         src_path = os.getcwd() + '\\Mini-game-hub\\src\\minesweeper'
-        self.img_path = { 'c' : src_path + '\\close.png', 'f' : src_path + '\\flag.png', }
+        self.img_path = { 
+            'c' : src_path + '\\close.png', 
+            'f' : src_path + '\\flag.png', 
+            '9' : src_path + '\\mine.png', 
+            }
         for i in range(0, 9):
             self.img_path[f'{i}'] = src_path + f'\\Number_{i}.png'
 
@@ -51,7 +55,7 @@ class Minesweeper_Window(QWidget):
         self.level_select.addItem('INTERMEDIATE')
         self.level_select.addItem('ADVANCED')
         self.level_select.setCurrentIndex(level)
-        self.level_select.currentIndexChanged.connect(self.level_change)
+        self.level_select.currentIndexChanged.connect(self.restart)
         self.level_select.setFixedWidth(130)
         hbox_info.addWidget(self.level_select, 0, Qt.AlignLeft)
         vbox.addLayout(hbox_info)
@@ -71,12 +75,8 @@ class Minesweeper_Window(QWidget):
         self.setLayout(vbox)
 
     def update(self):
-        st = read(self.game)
-        if st == "clear" or st == "lose" :
-            self.gameEnd_dialog(st)
-            return
-        
-        line = [st[i:i + self.y] for i in range(0, len(st), self.y)]
+        board_info = read(self.game)
+        line = [board_info[i:i + self.y] for i in range(0, len(board_info), self.y)]
         for i in range(self.x):
             for j in range(self.y):
                 if self.board[i][j][0] != line[i][j]:
@@ -92,6 +92,17 @@ class Minesweeper_Window(QWidget):
                     self.board[i][j][1] = label
         
         self.repaint()
+
+        gameOver_info = read(self.game)
+        gameOver_info = gameOver_info.rstrip('\n')
+        if gameOver_info == 'continue':
+            print('CONT')
+            return
+        else:
+            print('OVER')
+            self.gameEnd_dialog(gameOver_info)
+            return
+        
 
     def mousePressEvent(self, event):
         mousePos = self.mapFromGlobal(self.mapToGlobal(event.pos()))
@@ -122,9 +133,6 @@ class Minesweeper_Window(QWidget):
             self.restart()
         elif msgBox.clickedButton() == exitButton:
             self.close()
-
-    def level_change(self):
-        self.restart()
 
 
 
