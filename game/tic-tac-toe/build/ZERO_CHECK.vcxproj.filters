@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\WorkSpace\Visual Studio Code Workspace\Mini-game-hub\game\tic-tac-toe\build\CMakeFiles\b406cfa8d7eedf80922beede9f45874a\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{0D2F0395-5DA9-3AD6-9287-3A41D0B8EAC1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
