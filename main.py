@@ -34,6 +34,7 @@ class MainWindow(QWidget):
             self.make_btn(layout, i)
 
         self.setLayout(layout)
+        self.grab().save(f'{image_path}\\execution screen\\main.png', 'PNG') # auto Screenshot for project introduction
 
     def make_btn(self, layout, idx):
         icon = QIcon(QPixmap(gameList[idx][0]))
