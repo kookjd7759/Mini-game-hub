@@ -1,0 +1,165 @@
+#include <iostream>
+#include <random>
+
+using namespace std;
+
+#define Fori(x) for (int i = 0; i < x; ++i)
+#define Forj(x) for (int j = 0; j < x; ++j)
+#define Fork(x) for (int k = 0; k < x; ++k)
+
+enum Dir {
+	UP, DOWN, LEFT, RIGHT
+};
+
+class Game {
+private:
+	int board[4][4], score = 0, emptySize = 16;
+
+	void create() {
+		random_device rd; mt19937 gen(rd());
+		uniform_int_distribution<> block_dis(1, 10);
+		int block = (block_dis(gen) <= 2 ? 4 : 2);
+		uniform_int_distribution<> posIdx_dis(0, emptySize - 1);
+		int posIdx = posIdx_dis(gen);
+		Fori(4) Forj(4) {
+			if (board[i][j] == 0 && !posIdx) {
+				board[i][j] = block;
+				return;
+			}
+			else --posIdx;
+		}
+	}
+	int moveLine(Dir dir, int idx) {
+		int dest, sum(0);
+		if (dir == LEFT) {
+			dest = 0;
+			for (int i = 1; i < 4; i++) {
+				if (!board[idx][i]) continue;
+
+				if (!board[idx][dest]) board[idx][dest] = board[idx][i];
+				else {
+					if (board[idx][dest] & board[idx][i]) {
+						board[idx][dest] <<= 1;
+						dest++;
+						++emptySize;
+						sum += board[idx][dest];
+					}
+					else {
+						dest++;
+						if (dest == i) continue;
+						board[idx][dest] = board[idx][i];
+					}
+				}
+				board[idx][i] = 0;
+			}
+		}
+		else if (dir == RIGHT) {
+			dest = 3;
+			for (int i = 2; i >= 0; i--) {
+				if (!board[idx][i]) continue;
+
+				if (!board[idx][dest]) board[idx][dest] = board[idx][i];
+				else {
+					if (board[idx][dest] & board[idx][i]) {
+						board[idx][dest] <<= 1;
+						dest--;
+						++emptySize;
+						sum += board[idx][dest];
+					}
+					else {
+						dest--;
+						if (dest == i) continue;
+						board[idx][dest] = board[idx][i];
+					}
+				}
+				board[idx][i] = 0;
+			}
+		}
+		else if (dir == UP) {
+			dest = 0;
+			for (int i = 1; i < 4; i++) {
+				if (!board[i][idx]) continue;
+
+				if (!board[dest][idx]) board[dest][idx] = board[i][idx];
+				else {
+					if (board[dest][idx] & board[i][idx]) {
+						board[dest][idx] <<= 1;
+						dest++;
+						++emptySize;
+						sum += board[dest][idx];
+					}
+					else {
+						dest++;
+						if (dest == i) continue;
+						board[dest][idx] = board[i][idx];
+					}
+				}
+				board[i][idx] = 0;
+			}
+		}
+		else {
+			dest = 3;
+			for (int i = 2; i >= 0; i--) {
+				if (!board[i][idx]) continue;
+
+				if (!board[dest][idx]) board[dest][idx] = board[i][idx];
+				else {
+					if (board[dest][idx] & board[i][idx]) {
+						board[dest][idx] <<= 1;
+						dest--;
+						++emptySize;
+						sum += board[dest][idx];
+					}
+					else {
+						dest--;
+						if (dest == i) continue;
+						board[dest][idx] = board[i][idx];
+					}
+				}
+				board[i][idx] = 0;
+			}
+		}
+		return sum;
+	}
+	int move(Dir dir) { 
+		int sum(0); 
+		Fori(4) sum += moveLine(dir, i);
+		return sum;
+	}
+	bool isEnd() const {
+		if (emptySize) return false;
+
+		Fori(4) Forj(3) if (board[i][j] == board[i][j + 1] || board[j][i] == board[j + 1][i]) return false;
+
+		return true;
+	}
+	void SEND_score() const { cout << score << "\n"; }
+	void SEND_board() const { Fori(4) Forj(4) cout << board[i][j]; cout << "\n"; }
+
+public:
+	Game() { 
+		memset(board, 0, sizeof(board));
+		create(); create();
+	}
+
+	void play() {
+		SEND_board();
+		while (true) {
+			int dir; cin >> dir;
+			score += move((Dir)dir);
+			create();
+			SEND_score();
+			SEND_board();
+			if (isEnd()) {
+				cout << "end\n";
+				break;
+			}
+			else cout << "continue\n";
+		}
+	}
+};
+
+int main() {
+	Game game;
+	game.play();
+}

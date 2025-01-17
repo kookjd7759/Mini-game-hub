@@ -14,7 +14,7 @@ The logic for all the games is implemented in C++, while all game windows, inclu
 ### 1. Minesweeper
 **Minesweeper** is a classic puzzle game that challenges players to locate hidden mines on a grid. The goal is to clear all non-mine cells without detonating any mines.
 
-![minesweeper](https://github.com/kookjd7759/Mini-game-hub/blob/main/image/screenShot/minesweeper.png?raw=true)
+![minesweeper](https://github.com/kookjd7759/Mini-game-hub/blob/main/image/screenShot/minesweeper.gif?raw=true)
 
 Minesweeper in this hub is designed to **guarantee that the first clicked cell and its surrounding cells are free of mines**. 
 

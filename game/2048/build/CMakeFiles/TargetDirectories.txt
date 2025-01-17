@@ -1,0 +1,3 @@
+C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/2048/build/CMakeFiles/2048.dir
+C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/2048/build/CMakeFiles/ALL_BUILD.dir
+C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/2048/build/CMakeFiles/ZERO_CHECK.dir
