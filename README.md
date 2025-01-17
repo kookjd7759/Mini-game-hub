@@ -6,7 +6,7 @@ All games in Mini Game Hub efficiently utilize inter-process communication (IPC)
 - Front-end : PyQt5
 - Back-end : C++
 
-![main](images/main.png)
+![main](https://raw.githubusercontent.com/kookjd7759/Mini-game-hub/images/execution_screen/main.png)
 
 The logic for all the games is implemented in C++, while all game windows, including the menu window, are created using Python's PyQt. Communication between the game logic and the windows is handled through a **standard I/O-based communication** method using **pipes**, a form of **inter-process communication (IPC)**.
 
