@@ -5,12 +5,14 @@ from PyQt5.QtCore import Qt
 
 from minesweeper import *
 from tic_tac_toe import *
+from game2048 import *
 
 image_path = os.getcwd() + '\\Mini-game-hub\\image'
 icon_path  = image_path + '\\main_icon.png'
 gameList = [
     (image_path + "\\minesweeper\\icon.png", "Minesweeper"),
-    (image_path + "\\tic-tac-toe\\icon.png", "Tic Tac Toe")
+    (image_path + "\\tic-tac-toe\\icon.png", "Tic Tac Toe"),
+    (image_path + "\\2048\\icon.png", "2048")
 ]
 
 class MainWindow(QWidget):
@@ -21,7 +23,7 @@ class MainWindow(QWidget):
     def initUI(self):
         self.setWindowTitle("Mini Game Hub")
         self.setWindowIcon(QIcon(icon_path))
-        self.setFixedSize(300, 150) 
+        self.setFixedSize(300, 300) 
 
         layout = QVBoxLayout()
 
@@ -39,9 +41,10 @@ class MainWindow(QWidget):
         icon = QIcon(QPixmap(gameList[idx][0]))
         text = gameList[idx][1]
         btn = QPushButton(f' {text}', self)
+        btn.setFixedHeight(50)
         btn.setIcon(icon)
         btn.setIconSize(icon.pixmap(30, 30).size())
-        btn.setStyleSheet("font-size: 18px;")
+        btn.setStyleSheet("font-size: 22px;")
         btn.clicked.connect(lambda: self.start_game(idx))
         layout.addWidget(btn)
 
@@ -51,6 +54,8 @@ class MainWindow(QWidget):
             self.game_window = Minesweeper_Window()
         elif idx == 1:
             self.game_window = TicTacToe_Window()
+        elif idx == 2:
+            self.game_window = Game2048_Window()
 
         self.game_window.setWindowModality(Qt.ApplicationModal)
         self.game_window.show()

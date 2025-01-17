@@ -134,7 +134,7 @@ private:
 		return true;
 	}
 	void SEND_score() const { cout << score << "\n"; }
-	void SEND_board() const { Fori(4) Forj(4) cout << board[i][j]; cout << "\n"; }
+	void SEND_board() const { Fori(4) Forj(4) cout << board[i][j] << ' '; cout << "\n"; }
 
 public:
 	Game() { 
@@ -144,12 +144,14 @@ public:
 
 	void play() {
 		SEND_board();
+		SEND_score();
+		cout << "continue\n";
 		while (true) {
 			int dir; cin >> dir;
 			score += move((Dir)dir);
 			create();
-			SEND_score();
 			SEND_board();
+			SEND_score();
 			if (isEnd()) {
 				cout << "end\n";
 				break;

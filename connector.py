@@ -3,6 +3,7 @@ import os
 
 MINESWEEPER_PATH = os.getcwd() + '\\Mini-game-hub\\game\\minesweeper\\build\\Debug\\Minesweeper.exe'
 TICTACTOE_PATH = os.getcwd() + '\\Mini-game-hub\\game\\tic-tac-toe\\build\\Debug\\Tic-tac-toe.exe'
+GAME2048_PATH = os.getcwd() + '\\Mini-game-hub\\game\\2048\\build\\Debug\\2048.exe'
 
 def send(game, st):
     print(f'connector.SEND {st}')
@@ -26,6 +27,16 @@ def MINESWEEPER_EXE():
 def TICTACTOE_EXE():
     game = subprocess.Popen(
             [TICTACTOE_PATH],
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True
+        )
+    return game
+
+def GAME2048_EXE():
+    game = subprocess.Popen(
+            [GAME2048_PATH],
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,

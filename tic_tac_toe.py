@@ -1,7 +1,7 @@
 import sys
 import os
 
-from PyQt5.QtWidgets import QApplication, QWidget, QMessageBox, QHBoxLayout, QVBoxLayout, QPushButton, QLabel, QComboBox, QGridLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QMessageBox, QVBoxLayout, QPushButton, QLabel
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap
@@ -54,7 +54,6 @@ class TicTacToe_Window(QWidget):
 
     def update(self):
         board_info = read(self.game)
-        print(board_info[0])
         self.turn_lbl.setText(f'{"O" if board_info[0] == "1" else "X"}\'s turn')
         board_info = board_info[1:]
         line = [board_info[i:i + 3] for i in range(0, len(board_info), 3)]
@@ -72,7 +71,6 @@ class TicTacToe_Window(QWidget):
         if gameOver_info != 'continue':
             self.gameEnd_dialog(gameOver_info)
             return
-        
         
     def mousePressEvent(self, event):
         mousePos = self.mapFromGlobal(self.mapToGlobal(event.pos()))
