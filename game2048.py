@@ -93,16 +93,12 @@ class Game2048_Window(QWidget):
         key = event.key()
 
         if key == Qt.Key_Up:
-            print('Up arrow pressed!')
             send(self.game, '0')
         elif key == Qt.Key_Down:
-            print('Down arrow pressed!')
             send(self.game, '1')
         elif key == Qt.Key_Left:
-            print('Left arrow pressed!')
             send(self.game, '2')
         elif key == Qt.Key_Right:
-            print('Right arrow pressed!')
             send(self.game, '3')
 
         self.update()

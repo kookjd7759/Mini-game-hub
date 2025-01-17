@@ -15,18 +15,33 @@ class Game {
 private:
 	int board[4][4], score = 0, emptySize = 16;
 
+	bool isEnd() const {
+		if (emptySize) return false;
+
+		Fori(4) Forj(3) if (board[i][j] == board[i][j + 1] || board[j][i] == board[j + 1][i]) return false;
+
+		return true;
+	}
+	bool isSame(int temp[4][4]) {
+		Fori(4) Forj(4) if (temp[i][j] != board[i][j]) return false;
+		return true;
+	}
+
 	void create() {
 		random_device rd; mt19937 gen(rd());
 		uniform_int_distribution<> block_dis(1, 10);
 		int block = (block_dis(gen) <= 2 ? 4 : 2);
-		uniform_int_distribution<> posIdx_dis(0, emptySize - 1);
+		uniform_int_distribution<> posIdx_dis(1, emptySize);
 		int posIdx = posIdx_dis(gen);
 		Fori(4) Forj(4) {
-			if (board[i][j] == 0 && !posIdx) {
-				board[i][j] = block;
-				return;
+			if (board[i][j] == 0) {
+				--posIdx;
+				if (!posIdx) {
+					board[i][j] = block;
+					--emptySize;
+					return;
+				}
 			}
-			else --posIdx;
 		}
 	}
 	int moveLine(Dir dir, int idx) {
@@ -126,13 +141,6 @@ private:
 		Fori(4) sum += moveLine(dir, i);
 		return sum;
 	}
-	bool isEnd() const {
-		if (emptySize) return false;
-
-		Fori(4) Forj(3) if (board[i][j] == board[i][j + 1] || board[j][i] == board[j + 1][i]) return false;
-
-		return true;
-	}
 	void SEND_score() const { cout << score << "\n"; }
 	void SEND_board() const { Fori(4) Forj(4) cout << board[i][j] << ' '; cout << "\n"; }
 
@@ -142,14 +150,20 @@ public:
 		create(); create();
 	}
 
+	void slide(Dir dir) {
+		int temp[4][4]; memcpy(temp, board, sizeof(board));
+		int gain = move(dir);
+		if (isSame(temp)) return;
+		score += gain;
+		create();
+	}
 	void play() {
 		SEND_board();
 		SEND_score();
 		cout << "continue\n";
 		while (true) {
 			int dir; cin >> dir;
-			score += move((Dir)dir);
-			create();
+			slide((Dir)dir);
 			SEND_board();
 			SEND_score();
 			if (isEnd()) {
