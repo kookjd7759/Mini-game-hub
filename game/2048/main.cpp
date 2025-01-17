@@ -136,8 +136,8 @@ private:
 		}
 		return sum;
 	}
-	int move(Dir dir) { 
-		int sum(0); 
+	int move(Dir dir) {
+		int sum(0);
 		Fori(4) sum += moveLine(dir, i);
 		return sum;
 	}
@@ -145,7 +145,7 @@ private:
 	void SEND_board() const { Fori(4) Forj(4) cout << board[i][j] << ' '; cout << "\n"; }
 
 public:
-	Game() { 
+	Game() {
 		memset(board, 0, sizeof(board));
 		create(); create();
 	}
