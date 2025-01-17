@@ -6,17 +6,19 @@ All games in Mini Game Hub efficiently utilize inter-process communication (IPC)
 - Front-end : PyQt5
 - Back-end : C++
 
+![main](https://github.com/user-attachments/assets/7193a133-05ca-414f-b755-803935a3dc49)
+
 The logic for all the games is implemented in C++, while all game windows, including the menu window, are created using Python's PyQt. Communication between the game logic and the windows is handled through a **standard I/O-based communication** method using **pipes**, a form of **inter-process communication (IPC)**.
 
 ## Games
 ### 1. Minesweeper
 **Minesweeper** is a classic puzzle game that challenges players to locate hidden mines on a grid. The goal is to clear all non-mine cells without detonating any mines.
 
-Minesweeper in this hub is designed to guarantee that the first clicked cell and its surrounding cells are free of mines. 
+![minesweeper](https://github.com/user-attachments/assets/a3783ca7-cab0-4e15-bfa8-40db23cf7b69)
+
+Minesweeper in this hub is designed to **guarantee that the first clicked cell and its surrounding cells are free of mines**. 
 
 It includes three difficulty levels:
  - Beginner : 8x10 grid with 10 mines
  - Intermediate : 14x18 grid with 40 mines
  - Advanced : 20x24 grid with 99 mines
-
-This ensures that players can safely begin each game, with the first move always being free of mines.
