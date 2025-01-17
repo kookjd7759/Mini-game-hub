@@ -22,3 +22,9 @@ It includes three difficulty levels:
  - Beginner : 8x10 grid with 10 mines
  - Intermediate : 14x18 grid with 40 mines
  - Advanced : 20x24 grid with 99 mines
+
+### 2. Tic Tac Toe
+**Tic-Tac-Toe** is a two-player game where players take turns placing "X" or "O" on a 3x3 grid. The goal is to get three of the same marks in a row, either horizontally, vertically, or diagonally.
+
+![TicTacToe](https://github.com/kookjd7759/Mini-game-hub/blob/main/image/screenShot/tic-tac-toe.png?raw=true)
+
