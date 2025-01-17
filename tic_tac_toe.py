@@ -2,6 +2,7 @@ import sys
 import os
 
 from PyQt5.QtWidgets import QApplication, QWidget, QMessageBox, QHBoxLayout, QVBoxLayout, QPushButton, QLabel, QComboBox, QGridLayout
+from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap
 
@@ -16,7 +17,8 @@ class TicTacToe_Window(QWidget):
         self.show()
 
     def load_img(self):
-        src_path = os.getcwd() + '\\Mini-game-hub\\src\\tic-tac-toe'
+        src_path = os.getcwd() + '\\Mini-game-hub\\image\\tic-tac-toe'
+        self.icon_path  = src_path + '\\icon.png'
         self.img_path = { 
             'board' : src_path + '\\board.png',
             '1' : src_path + '\\O.png',
@@ -31,6 +33,7 @@ class TicTacToe_Window(QWidget):
 
     def initUI(self):
         self.setWindowTitle("Tic Tac Toe")
+        self.setWindowIcon(QIcon(self.icon_path))
         self.setFixedSize(self.CELL_SIZE * 3, self.CELL_SIZE * 3 + 20)
 
         vbox = QVBoxLayout()

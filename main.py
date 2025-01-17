@@ -6,6 +6,12 @@ from PyQt5.QtCore import Qt
 from minesweeper import *
 from tic_tac_toe import *
 
+image_path = os.getcwd() + '\\Mini-game-hub\\image'
+gameList = [
+    (image_path + "\\minesweeper\\icon.png", "Minesweeper"),
+    (image_path + "\\tic-tac-toe\\icon.png", "Tic Tac Toe")
+]
+
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -22,27 +28,31 @@ class MainWindow(QWidget):
         title_lbl.setAlignment(Qt.AlignCenter)
         layout.addWidget(title_lbl)
 
-        minesweeper_btn = QPushButton("Minesweeper", self)
-        minesweeper_btn.setStyleSheet("font-size: 18px;")
-        minesweeper_btn.clicked.connect(self.start_minesweeper)
-        layout.addWidget(minesweeper_btn)
-
-        minesweeper_btn = QPushButton("Tic Tac Toe", self)
-        minesweeper_btn.setStyleSheet("font-size: 18px;")
-        minesweeper_btn.clicked.connect(self.start_TicTacToe)
-        layout.addWidget(minesweeper_btn)
+        for i in range(len(gameList)):
+            self.make_btn(layout, i)
 
         self.setLayout(layout)
 
-    def start_minesweeper(self):
-        self.minesweeper_window = Minesweeper_Window()
-        self.minesweeper_window.setWindowModality(Qt.ApplicationModal)
-        self.minesweeper_window.show()
+    def make_btn(self, layout, idx):
+        icon = QIcon(QPixmap(gameList[idx][0]))
+        text = gameList[idx][1]
+        btn = QPushButton(f' {text}', self)
+        btn.setIcon(icon)
+        btn.setIconSize(icon.pixmap(30, 30).size())
+        btn.setStyleSheet("font-size: 18px;")
+        btn.clicked.connect(lambda: self.start_game(idx))
+        layout.addWidget(btn)
 
-    def start_TicTacToe(self):
-        self.tictactoe_window = TicTacToe_Window()
-        self.tictactoe_window.setWindowModality(Qt.ApplicationModal)
-        self.tictactoe_window.show()
+    def start_game(self, idx):
+        self.game_window = None
+        if idx == 0:
+            self.game_window = Minesweeper_Window()
+        elif idx == 1:
+            self.game_window = TicTacToe_Window()
+
+        self.game_window.setWindowModality(Qt.ApplicationModal)
+        self.game_window.show()
+
 
 
 

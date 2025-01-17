@@ -2,6 +2,7 @@ import sys
 import os
 
 from PyQt5.QtWidgets import QApplication, QWidget, QMessageBox, QHBoxLayout, QVBoxLayout, QPushButton, QLabel, QComboBox, QGridLayout
+from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap
 
@@ -11,7 +12,8 @@ class Minesweeper_Window(QWidget):
     CELL_SIZE = 32
     
     def load_img(self):
-        src_path = os.getcwd() + '\\Mini-game-hub\\src\\minesweeper'
+        src_path = os.getcwd() + '\\Mini-game-hub\\image\\minesweeper'
+        self.icon_path  = src_path + '\\icon.png'
         self.img_path = { 
             'c' : src_path + '\\close.png', 
             'f' : src_path + '\\flag.png', 
@@ -44,6 +46,7 @@ class Minesweeper_Window(QWidget):
         self.x = x
         self.y = y
         self.setWindowTitle("Minesweeper")
+        self.setWindowIcon(QIcon(self.icon_path))
         self.setFixedSize(self.CELL_SIZE * y, self.CELL_SIZE * x + 26)
 
         vbox = QVBoxLayout()
