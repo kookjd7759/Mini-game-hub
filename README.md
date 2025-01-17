@@ -10,4 +10,13 @@ The logic for all the games is implemented in C++, while all game windows, inclu
 
 ## Games
 ### 1. Minesweeper
-//TODO
+**Minesweeper** is a classic puzzle game that challenges players to locate hidden mines on a grid. The goal is to clear all non-mine cells without detonating any mines.
+
+Minesweeper in this hub is designed to guarantee that the first clicked cell and its surrounding cells are free of mines. 
+
+It includes three difficulty levels:
+ - Beginner : 8x10 grid with 10 mines
+ - Intermediate : 14x18 grid with 40 mines
+ - Advanced : 20x24 grid with 99 mines
+
+This ensures that players can safely begin each game, with the first move always being free of mines.
