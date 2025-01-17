@@ -7,6 +7,7 @@ from minesweeper import *
 from tic_tac_toe import *
 
 image_path = os.getcwd() + '\\Mini-game-hub\\image'
+icon_path  = image_path + '\\main_icon.png'
 gameList = [
     (image_path + "\\minesweeper\\icon.png", "Minesweeper"),
     (image_path + "\\tic-tac-toe\\icon.png", "Tic Tac Toe")
@@ -19,6 +20,7 @@ class MainWindow(QWidget):
 
     def initUI(self):
         self.setWindowTitle("Mini Game Hub")
+        self.setWindowIcon(QIcon(icon_path))
         self.setFixedSize(300, 150) 
 
         layout = QVBoxLayout()
