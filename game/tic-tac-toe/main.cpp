@@ -40,7 +40,7 @@ private:
         board[x][y] = turn;
         turn = ~turn;
     }
-    void SEND_board() const { Fori(3) Forj(3) cout << board[i][j]; cout << "\n"; }
+    void SEND_board() const { cout << turn; Fori(3) Forj(3) cout << board[i][j]; cout << "\n"; }
     void SEND_result(Gameover_info gameOver) const { cout << gameOver_st[gameOver] << "\n"; }
 public:
     Game() {

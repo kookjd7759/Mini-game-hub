@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLa
 from PyQt5.QtCore import Qt
 
 from minesweeper import *
+from tic_tac_toe import *
 
 class MainWindow(QWidget):
     def __init__(self):
@@ -26,12 +27,22 @@ class MainWindow(QWidget):
         minesweeper_btn.clicked.connect(self.start_minesweeper)
         layout.addWidget(minesweeper_btn)
 
+        minesweeper_btn = QPushButton("Tic Tac Toe", self)
+        minesweeper_btn.setStyleSheet("font-size: 18px;")
+        minesweeper_btn.clicked.connect(self.start_TicTacToe)
+        layout.addWidget(minesweeper_btn)
+
         self.setLayout(layout)
 
     def start_minesweeper(self):
         self.minesweeper_window = Minesweeper_Window()
         self.minesweeper_window.setWindowModality(Qt.ApplicationModal)
         self.minesweeper_window.show()
+
+    def start_TicTacToe(self):
+        self.tictactoe_window = TicTacToe_Window()
+        self.tictactoe_window.setWindowModality(Qt.ApplicationModal)
+        self.tictactoe_window.show()
 
 
 

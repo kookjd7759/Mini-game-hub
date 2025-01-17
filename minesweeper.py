@@ -1,7 +1,7 @@
 import sys
 import os
 
-from PyQt5.QtWidgets import QApplication, QWidget, QMessageBox, QHBoxLayout, QVBoxLayout, QPushButton, QLabel, QComboBox, QGridLayout, QStackedWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QMessageBox, QHBoxLayout, QVBoxLayout, QPushButton, QLabel, QComboBox, QGridLayout
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap
 
@@ -95,20 +95,15 @@ class Minesweeper_Window(QWidget):
 
         gameOver_info = read(self.game)
         gameOver_info = gameOver_info.rstrip('\n')
-        if gameOver_info == 'continue':
-            print('CONT')
-            return
-        else:
-            print('OVER')
+        if gameOver_info != 'continue':
             self.gameEnd_dialog(gameOver_info)
             return
         
 
     def mousePressEvent(self, event):
         mousePos = self.mapFromGlobal(self.mapToGlobal(event.pos()))
-        y_offset = 26
         x = mousePos.x() // self.CELL_SIZE
-        y = (mousePos.y() - y_offset) // self.CELL_SIZE
+        y = (mousePos.y() - 26) // self.CELL_SIZE
         print(f'{x}, {y}')
         if event.button() == Qt.LeftButton:
             send(self.game, f'{y} {x} 0')
@@ -120,8 +115,6 @@ class Minesweeper_Window(QWidget):
         msgBox = QMessageBox(self)
         msgBox.setWindowTitle("Game Over")
         msgBox.setText(st)
-        label = msgBox.findChild(QLabel, "qt_msgbox_label")
-        label.setStyleSheet("font-size: 16px; font-weight: bold;")
         
         restartButton = QPushButton("Restart")
         msgBox.addButton(restartButton, QMessageBox.ActionRole)
