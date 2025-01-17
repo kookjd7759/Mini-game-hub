@@ -26,5 +26,5 @@ It includes three difficulty levels:
 ### 2. Tic Tac Toe
 **Tic-Tac-Toe** is a two-player game where players take turns placing "X" or "O" on a 3x3 grid. The goal is to get three of the same marks in a row, either horizontally, vertically, or diagonally.
 
-![TicTacToe](https://github.com/kookjd7759/Mini-game-hub/blob/main/image/screenShot/tic-tac-toe.png?raw=true)
+![TicTacToe](https://github.com/kookjd7759/Mini-game-hub/blob/main/image/screenShot/tic-tac-toe.gif?raw=true)
 
