@@ -11,6 +11,10 @@ All games in Mini Game Hub efficiently utilize inter-process communication (IPC)
 The logic for all the games is implemented in C++, while all game windows, including the menu window, are created using Python's PyQt. Communication between the game logic and the windows is handled through a **standard I/O-based communication** method using **pipes**, a form of **inter-process communication (IPC)**.
 
 ## Games
+The games are implemented to be playable using both the **keyboard** and the **mouse**.
+
+---
+
 ### 1. Minesweeper
 **Minesweeper** is a classic puzzle game that challenges players to locate hidden mines on a grid. The goal is to clear all non-mine cells without detonating any mines.
 
