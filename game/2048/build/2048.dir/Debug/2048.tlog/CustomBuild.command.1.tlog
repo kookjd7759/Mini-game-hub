@@ -1,6 +1,6 @@
-^C:\WORKSPACE\VISUAL STUDIO CODE WORKSPACE\MINI-GAME-HUB\GAME\2048\CMAKELISTS.TXT
+^C:\VS CODE WORKSPACE\MINI-GAME-HUB\GAME\2048\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/2048" "-BC:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/2048/build" --check-stamp-file "C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/2048/build/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/VS Code Workspace/Mini-game-hub/game/2048" "-BC:/VS Code Workspace/Mini-game-hub/game/2048/build" --check-stamp-file "C:/VS Code Workspace/Mini-game-hub/game/2048/build/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

@@ -55,9 +55,9 @@ private:
 				else {
 					if (board[idx][dest] & board[idx][i]) {
 						board[idx][dest] <<= 1;
+						sum += board[idx][dest];
 						dest++;
 						++emptySize;
-						sum += board[idx][dest];
 					}
 					else {
 						dest++;
@@ -77,9 +77,9 @@ private:
 				else {
 					if (board[idx][dest] & board[idx][i]) {
 						board[idx][dest] <<= 1;
+						sum += board[idx][dest];
 						dest--;
 						++emptySize;
-						sum += board[idx][dest];
 					}
 					else {
 						dest--;
@@ -99,9 +99,9 @@ private:
 				else {
 					if (board[dest][idx] & board[i][idx]) {
 						board[dest][idx] <<= 1;
+						sum += board[dest][idx];
 						dest++;
 						++emptySize;
-						sum += board[dest][idx];
 					}
 					else {
 						dest++;
@@ -121,9 +121,9 @@ private:
 				else {
 					if (board[dest][idx] & board[i][idx]) {
 						board[dest][idx] <<= 1;
+						sum += board[dest][idx];
 						dest--;
 						++emptySize;
-						sum += board[dest][idx];
 					}
 					else {
 						dest--;

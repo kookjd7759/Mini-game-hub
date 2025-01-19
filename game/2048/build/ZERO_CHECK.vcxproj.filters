@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\WorkSpace\Visual Studio Code Workspace\Mini-game-hub\game\2048\build\CMakeFiles\20bf784a6caaa721c6ca38cc1cfc4bde\generate.stamp.rule">
+    <CustomBuild Include="C:\VS Code Workspace\Mini-game-hub\game\2048\build\CMakeFiles\258076d9cee7ae314b1d2dae47eb93ef\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{8CD8830F-BDAD-3E77-B82D-973558123B39}</UniqueIdentifier>
+      <UniqueIdentifier>{3D0C49AC-4733-3965-A8A9-A42B5AF692BA}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
