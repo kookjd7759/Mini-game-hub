@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\VS Code Workspace\Mini-game-hub\game\memory\build\CMakeFiles\c0466ac50c1c37238103ef55660ed0e6\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{6C274CA8-EB33-3117-9622-28D2A7C611D9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

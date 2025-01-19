@@ -1,0 +1,10 @@
+^C:\VS CODE WORKSPACE\MINI-GAME-HUB\GAME\MEMORY\BUILD\CMAKEFILES\C0466AC50C1C37238103EF55660ED0E6\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/VS Code Workspace/Mini-game-hub/game/memory" "-BC:/VS Code Workspace/Mini-game-hub/game/memory/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/VS Code Workspace/Mini-game-hub/game/memory/build/Memory.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

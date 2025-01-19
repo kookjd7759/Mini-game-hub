@@ -17,7 +17,7 @@ class Minesweeper_Window(QWidget):
         self.img_path = { 
             'c' : src_path + '\\close.png', 
             'f' : src_path + '\\flag.png', 
-            '9' : src_path + '\\mine.png', 
+            '9' : src_path + '\\mine.png'
             }
         for i in range(0, 9):
             self.img_path[f'{i}'] = src_path + f'\\Number_{i}.png'
@@ -96,11 +96,9 @@ class Minesweeper_Window(QWidget):
         
         self.repaint()
 
-        gameOver_info = read(self.game)
-        gameOver_info = gameOver_info.rstrip('\n')
+        gameOver_info = read(self.game).rstrip('\n')
         if gameOver_info != 'continue':
             self.gameEnd_dialog(gameOver_info)
-            return
         
 
     def mousePressEvent(self, event):

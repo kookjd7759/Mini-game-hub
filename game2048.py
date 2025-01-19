@@ -35,7 +35,7 @@ class Game2048_Window(QWidget):
     def initUI(self):
         self.setWindowTitle("2048")
         self.setWindowIcon(QIcon(self.icon_path))
-        self.setFixedSize(450, 450 + 40)
+        self.setFixedSize(450, 450 + 20)
 
         vbox = QVBoxLayout()
         vbox.setContentsMargins(0, 0, 0, 0)
