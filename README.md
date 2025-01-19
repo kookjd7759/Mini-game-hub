@@ -28,7 +28,7 @@ It includes three difficulty levels:
 
 <img src="https://github.com/kookjd7759/Mini-game-hub/blob/main/image/screenShot/tic-tac-toe.gif?raw=true" width="350" />
 
-### 2. 2048
+### 3. 2048
 **2048** is a logic-based puzzle game where players slide numbered tiles on a 4x4 grid. When tiles with the same number collide, they merge into one tile with a higher number, increasing the score. The goal is to maximize the score before no moves remain.
 
 <img src="https://github.com/kookjd7759/Mini-game-hub/blob/main/image/screenShot/2048.gif?raw=true" width="350" />
