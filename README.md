@@ -16,7 +16,7 @@ The logic for all the games is implemented in C++, while all game windows, inclu
 
 <img src="https://github.com/kookjd7759/Mini-game-hub/blob/main/image/screenShot/minesweeper.gif?raw=true" width="350" />
 
-Minesweeper in this hub is designed to **guarantee that the first clicked cell and its suㅊrrounding cells are free of mines**. 
+Minesweeper in this hub is designed to **guarantee that the first clicked cell and its surrounding cells are free of mines**. 
 
 It includes three difficulty levels:
  - Beginner : 8x10 grid with 10 mines
