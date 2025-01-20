@@ -65,7 +65,6 @@ class Game2048_Window(QWidget):
     def update(self):
         board_info = read(self.game)
         line = board_info.split()
-        print(line)
         line = [line[i:i + 4] for i in range(0, len(line), 4)]
         for i in range(4):
             for j in range(4):
