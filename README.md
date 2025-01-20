@@ -1,5 +1,5 @@
 # <img src="https://github.com/kookjd7759/Mini-game-hub/blob/main/image/main_icon.png?raw=true" width="30" /> Mini Game Hub
-**Mini Game Hub** is a compact collection of mini-games, featuring 4 game. While most of the games in the hub are well-known game that have been released before, I have personally implemented all the features for each one.
+**Mini Game Hub** is a compact collection of mini-games, featuring 5 game. While most of the games in the hub are well-known game that have been released before, I have personally implemented all the features for each one.
 
 All games in Mini Game Hub efficiently utilize inter-process communication (IPC) to **provide a graphical user interface (GUI)**.
 #### Development environment
@@ -61,3 +61,8 @@ The game ends if three blocks are clicked incorrectly in a single level. The lev
  - level 8 : 10x10 grid with 38 blocks
  
  Each level is played three times, and with each round, one additional block is added to the sequence that must be matched.
+
+### 5. Click !
+**Click !** is a reaction time test game where the goal is to quickly turn the button back to "off" when it changes to the "on" state. It offers options for 3, 5, or 10 attempts, and measures the average reaction time for each attempt. The game ends immediately if the button is clicked when it is not in the "on" state, requiring fast and precise responses.
+
+<img src="https://github.com/kookjd7759/Mini-game-hub/blob/main/image/screenShot/click.gif?raw=true" width="350" />

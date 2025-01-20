@@ -133,14 +133,13 @@ class Click_Window(QWidget):
             score = read(self.game).rstrip('\n')
             msgBox = QMessageBox(self)
             msgBox.setWindowTitle("Score")
-            msgBox.setText(score)
+            msgBox.setText(f'{score}ms')
             msgBox.exec_()
             self.switch_bg()
         
         if self.count == int(self.size_select.currentText()):
             average_score = read(self.game).rstrip('\n')
-            self.gameEnd_dialog('Complete', average_score)
-
+            self.gameEnd_dialog('Complete', f'Average {average_score}ms')
 
     def gameEnd_dialog(self, title, st):
         msgBox = QMessageBox(self)
