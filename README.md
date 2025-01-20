@@ -45,3 +45,19 @@ This game is implemented to be played using the **keyboard**, where the **four a
 
 ---
 
+### 4. Memory
+**Memory** is a memory game where blocks light up in a sequence, and players must click the corresponding blocks. As the game progresses, the sequence becomes longer and more challenging. The goal is to match the most blocks and achieve the highest score.
+
+<img src="https://github.com/kookjd7759/Mini-game-hub/blob/main/image/screenShot/memory.gif?raw=true" width="350" />
+
+The game ends if three blocks are clicked incorrectly in a single level. The levels are structured as follows: :
+ - level 1 : 3x3 grid with 3 blocks
+ - level 2 : 4x4 grid with 5 blocks
+ - level 3 : 5x5 grid with 8 blocks
+ - level 4 : 6x6 grid with 12 blocks
+ - level 5 : 7x7 grid with 17 blocks
+ - level 6 : 8x8 grid with 23 blocks
+ - level 7 : 9x9 grid with 30 blocks
+ - level 8 : 10x10 grid with 38 blocks
+ 
+ Each level is played three times, and with each round, one additional block is added to the sequence that must be matched.

@@ -2,13 +2,13 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\VS Code Workspace\Mini-game-hub\game\memory\build\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>C:\WorkSpace\Visual Studio Code Workspace\Mini-game-hub\game\memory\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\VS Code Workspace\Mini-game-hub\game\memory\build\Debug\Memory.exe</FullPath>
+      <FullPath>C:\WorkSpace\Visual Studio Code Workspace\Mini-game-hub\game\memory\build\Debug\Memory.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\VS Code Workspace\Mini-game-hub\game\memory\build\x64\Debug\ALL_BUILD</FullPath>
+      <FullPath>C:\WorkSpace\Visual Studio Code Workspace\Mini-game-hub\game\memory\build\x64\Debug\ALL_BUILD</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

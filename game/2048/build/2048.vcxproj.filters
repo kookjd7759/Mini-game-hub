@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\VS Code Workspace\Mini-game-hub\game\2048\main.cpp">
+    <ClCompile Include="C:\WorkSpace\Visual Studio Code Workspace\Mini-game-hub\game\2048\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\VS Code Workspace\Mini-game-hub\game\2048\CMakeLists.txt" />
+    <CustomBuild Include="C:\WorkSpace\Visual Studio Code Workspace\Mini-game-hub\game\2048\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{FE890B90-CED6-335A-B47B-A90DE9829485}</UniqueIdentifier>
+      <UniqueIdentifier>{277B9919-EADB-331A-9428-9A350359306C}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

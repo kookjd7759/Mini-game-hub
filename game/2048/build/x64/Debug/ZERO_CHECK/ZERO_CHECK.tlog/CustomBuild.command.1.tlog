@@ -1,6 +1,6 @@
-^C:\VS CODE WORKSPACE\MINI-GAME-HUB\GAME\2048\BUILD\CMAKEFILES\258076D9CEE7AE314B1D2DAE47EB93EF\GENERATE.STAMP.RULE
+^C:\WORKSPACE\VISUAL STUDIO CODE WORKSPACE\MINI-GAME-HUB\GAME\2048\BUILD\CMAKEFILES\20BF784A6CAAA721C6CA38CC1CFC4BDE\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/VS Code Workspace/Mini-game-hub/game/2048" "-BC:/VS Code Workspace/Mini-game-hub/game/2048/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/VS Code Workspace/Mini-game-hub/game/2048/build/2048.sln"
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/2048" "-BC:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/2048/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/2048/build/2048.sln"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
