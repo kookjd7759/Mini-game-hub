@@ -1,5 +1,5 @@
 # Mini Game Hub
-**Mini Game Hub** is a compact collection of mini-games, featuring 3 game. While most of the games in the hub are well-known game that have been released before, I have personally implemented all the features for each one.
+**Mini Game Hub** is a compact collection of mini-games, featuring 4 game. While most of the games in the hub are well-known game that have been released before, I have personally implemented all the features for each one.
 
 All games in Mini Game Hub efficiently utilize inter-process communication (IPC) to **provide a graphical user interface (GUI)**.
 #### Development environment
