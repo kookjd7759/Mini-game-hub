@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\WorkSpace\Visual Studio Code Workspace\Mini-game-hub\game\click\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\WorkSpace\Visual Studio Code Workspace\Mini-game-hub\game\click\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0DF848F4-C038-371D-B46E-FE38FFCEBD59}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

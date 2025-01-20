@@ -12,6 +12,12 @@ from connector import *
 class Memory_Window(QWidget):
     isPlaying = False
 
+    def closeEvent(self, event):
+        if self.game:
+            self.game.terminate()
+            self.game.wait()
+        event.accept()
+        
     def restart(self):
         self.close()
         self.__init__()

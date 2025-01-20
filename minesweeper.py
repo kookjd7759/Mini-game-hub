@@ -10,7 +10,13 @@ from connector import *
 
 class Minesweeper_Window(QWidget):
     CELL_SIZE = 32
-    
+
+    def closeEvent(self, event):
+        if self.game:
+            self.game.terminate()
+            self.game.wait()
+        event.accept()
+
     def load_img(self):
         src_path = os.getcwd() + '\\Mini-game-hub\\image\\minesweeper'
         self.icon_path  = src_path + '\\icon.png'

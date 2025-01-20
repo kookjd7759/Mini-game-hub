@@ -1,0 +1,10 @@
+^C:\WORKSPACE\VISUAL STUDIO CODE WORKSPACE\MINI-GAME-HUB\GAME\CLICK\BUILD\CMAKEFILES\DA18E89BFE9E7C72D9202BF516E64F98\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/click" "-BC:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/click/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/WorkSpace/Visual Studio Code Workspace/Mini-game-hub/game/click/build/Click.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

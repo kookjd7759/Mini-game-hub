@@ -11,6 +11,12 @@ from connector import *
 class TicTacToe_Window(QWidget):
     CELL_SIZE = 100
      
+    def closeEvent(self, event):
+        if self.game:
+            self.game.terminate()
+            self.game.wait()
+        event.accept()
+        
     def restart(self):
         self.close()
         self.__init__()
