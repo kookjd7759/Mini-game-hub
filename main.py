@@ -27,7 +27,7 @@ class MainWindow(QWidget):
     def initUI(self):
         self.setWindowTitle("Mini Game Hub")
         self.setWindowIcon(QIcon(icon_path))
-        self.setFixedSize(300, 300) 
+        self.setFixedSize(300, 310) 
 
         layout = QVBoxLayout()
 
