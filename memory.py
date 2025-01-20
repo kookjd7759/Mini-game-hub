@@ -175,7 +175,7 @@ class Memory_Window(QWidget):
     def start(self):
         self.isPlaying = True
         self.start_btn.setEnabled(False)
-
+        
         read(self.game)
         self.showOnes()
 

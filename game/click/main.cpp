@@ -18,7 +18,6 @@ public:
 		for (int i = 1, n; i <= size; ++i) {
 			cin >> n;
 
-			cout << "wait\n";
 			double waitTime(dis(gen));
 			this_thread::sleep_for(chrono::duration<double>(waitTime));
 

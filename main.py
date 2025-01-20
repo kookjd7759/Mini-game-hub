@@ -7,6 +7,7 @@ from minesweeper import *
 from tic_tac_toe import *
 from game2048 import *
 from memory import *
+from click import *
 
 image_path = os.getcwd() + '\\Mini-game-hub\\image'
 icon_path  = image_path + '\\main_icon.png'
@@ -14,7 +15,8 @@ gameList = [
     (image_path + "\\minesweeper\\icon.png", "Minesweeper"),
     (image_path + "\\tic-tac-toe\\icon.png", "Tic Tac Toe"),
     (image_path + "\\2048\\icon.png", "2048"),
-    (image_path + "\\memory\\icon.png", "Memory")
+    (image_path + "\\memory\\icon.png", "Memory"),
+    (image_path + "\\click\\icon.png", "Click !")
 ]
 
 class MainWindow(QWidget):
@@ -60,7 +62,8 @@ class MainWindow(QWidget):
             self.game_window = Game2048_Window()
         elif idx == 3:
             self.game_window = Memory_Window()
-
+        elif idx == 4:
+            self.game_window = Click_Window()
         self.game_window.setWindowModality(Qt.ApplicationModal)
         self.game_window.show()
 
