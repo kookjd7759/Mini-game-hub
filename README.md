@@ -71,6 +71,4 @@ The game ends if three blocks are clicked incorrectly in a single level. The lev
 ### 5. Click !
 **Click !** is a reaction time test game where the goal is to quickly turn the button back to "off" when it changes to the "on" state. It offers options for 3, 5, or 10 attempts, and measures the average reaction time for each attempt. The game ends immediately if the button is clicked when it is not in the "off" state, requiring fast and precise responses.
 
-<img src="https://github.com/kookjd7759/Mini-game-hub/blob/main/image/screenShot/click.gif?raw=true" width="350" />
-
 ---
