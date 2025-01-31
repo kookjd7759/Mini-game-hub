@@ -16,7 +16,8 @@ gameList = [
     (image_path + "\\tic-tac-toe\\icon.png", "Tic Tac Toe"),
     (image_path + "\\2048\\icon.png", "2048"),
     (image_path + "\\memory\\icon.png", "Memory"),
-    (image_path + "\\click\\icon.png", "Click !")
+    (image_path + "\\click\\icon.png", "Click !"),
+    (image_path + "\\sudoku\\icon.png", "Sudoku")
 ]
 
 class MainWindow(QWidget):
@@ -27,7 +28,7 @@ class MainWindow(QWidget):
     def initUI(self):
         self.setWindowTitle("Mini Game Hub")
         self.setWindowIcon(QIcon(icon_path))
-        self.setFixedSize(300, 310) 
+        self.setFixedSize(300, 350) 
 
         layout = QVBoxLayout()
 

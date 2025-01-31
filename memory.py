@@ -151,7 +151,7 @@ class Memory_Window(QWidget):
             return
         mousePos = self.mapFromGlobal(self.mapToGlobal(event.pos()))
         x = mousePos.x() // (self.cell_size + 2)
-        y = (mousePos.y() - 40) // (self.cell_size + 2)
+        y = (mousePos.y() - 29) // (self.cell_size + 2)
         print(f'{x}, {y}')
         send(self.game, f'{x} {y}')
         self.update()
