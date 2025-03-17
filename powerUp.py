@@ -47,26 +47,6 @@ def split_image(image_path, num_splits, reverse = False, cut48to32 = False):
 
 
 
-class Object_Thread(QThread):
-    def __init__(self, images : list, label, interval=100):
-        super().__init__()
-        self.images = images
-        self.label = label
-        self.interval = interval
-
-        self.cur_idx = 0
-        pixmap = self.images[0]
-        self.label.setPixmap(pixmap)
-        self.label.resize(pixmap.width(), pixmap.height())
-
-    def run(self):
-        while True:
-            self.label.setPixmap(self.images[self.cur_idx])
-            self.cur_idx = (self.cur_idx + 1) % len(self.images)
-            time.sleep(self.interval / 1000)
-
-
-
 class GaugeBar(QWidget):
     def __init__(self, max, cur, parent=None):
         super().__init__(parent)
@@ -127,24 +107,7 @@ class Player_Thread(QThread):
             self.cur_state = state
             self.cur_idx = 0
 
-
-class Unit(QWidget):
-    def __init__(self, images, name, level, HP, ATK, parent=None):
-        super().__init__(parent)
-        self.images = images
-        self.name = name
-        self.level = level
-        self.HP = HP
-        self.ATK = ATK
-    
-    def initUI(self):
-        print('TODO')
-
-
-
-
-class PowerUpWindow(QWidget):
-    CELL_SIZE = 32
+class Player(QWidget):
     move_speed = 600
     isMoving = False
 
@@ -160,17 +123,13 @@ class PowerUpWindow(QWidget):
             'R_Idle': split_image(f'{src_path}\\player\\S_Idle.png', 4, reverse=True, cut48to32=True),
             'R_Walk': split_image(f'{src_path}\\player\\S_Walk.png', 6, reverse=True, cut48to32=True)
         }
-        self.slime_images = {
-            'D_Idle': split_image(f'{src_path}\\player\\D_Idle.png', 4, cut48to32=True),
-        }
-        self.tile_images = {
-            'gress' : path_to_pixmap(f'{src_path}\\tile\\ground_gress.png')
-        }
 
-    def __init__(self):
+    def __init__(self, CELL_SIZE, parent):
         super().__init__()
         self.load_img()
-        self.initUI()
+        self.setParent(parent)
+        self.setFocusPolicy(Qt.StrongFocus)
+        self.CELL_SIZE = CELL_SIZE
 
         self.one_move_timer = QTimer(self)
         self.one_move_timer.setSingleShot(True)
@@ -184,35 +143,10 @@ class PowerUpWindow(QWidget):
         
         self.player_bar = GaugeBar(100, 100, self)
         self.player_bar.move(self.CELL_SIZE * 1, self.CELL_SIZE * 1 - 16)
-        
-
-    def initUI(self):
-        self.setWindowTitle("Power up !")
-        self.setFixedSize(320, 320)
-
-        layout = QVBoxLayout()
-        self.background = []
-        self.create_background()
-
-        self.setLayout(layout)
 
     def one_move_timeout(self):
         self.isMoving = False
         self.change_state(f'{self.state[0]}_Idle')
-
-    def create_background(self):
-        for img in self.background:
-            img.deleteLater()
-        self.background = []
-
-        for i in range(10):
-            for j in range(10):
-                ground = QLabel(self)
-                pixmap = self.tile_images['gress']
-                ground.setPixmap(pixmap)
-                ground.resize(pixmap.width(), pixmap.height())
-                ground.move(self.CELL_SIZE * i, self.CELL_SIZE * j)
-                self.background.append(ground)
 
     def change_state(self, state):
         if self.state != state:
@@ -266,6 +200,62 @@ class PowerUpWindow(QWidget):
         loop.exec_()
         self.player_lbl.move(player_dest.x(), player_dest.y())
         self.player_bar.move(bar_dest.x(), bar_dest.y())
+
+
+
+class PowerUpWindow(QWidget):
+    CELL_SIZE = 32
+    move_speed = 600
+    isMoving = False
+
+    def load_img(self):
+        src_path = os.getcwd() + '\\Mini-game-hub\\image\\power up'
+        self.player_images = {
+            'D_Idle': split_image(f'{src_path}\\player\\D_Idle.png', 4, cut48to32=True),
+            'D_Walk': split_image(f'{src_path}\\player\\D_Walk.png', 6, cut48to32=True),
+            'U_Idle': split_image(f'{src_path}\\player\\U_Idle.png', 4, cut48to32=True),
+            'U_Walk': split_image(f'{src_path}\\player\\U_Walk.png', 6, cut48to32=True),
+            'L_Idle': split_image(f'{src_path}\\player\\S_Idle.png', 4, cut48to32=True),
+            'L_Walk': split_image(f'{src_path}\\player\\S_Walk.png', 6, cut48to32=True),
+            'R_Idle': split_image(f'{src_path}\\player\\S_Idle.png', 4, reverse=True, cut48to32=True),
+            'R_Walk': split_image(f'{src_path}\\player\\S_Walk.png', 6, reverse=True, cut48to32=True)
+        }
+        self.slime_images = {
+            'D_Idle': split_image(f'{src_path}\\player\\D_Idle.png', 4, cut48to32=True),
+        }
+        self.tile_images = {
+            'gress' : path_to_pixmap(f'{src_path}\\tile\\ground_gress.png')
+        }
+
+    def __init__(self):
+        super().__init__()
+        self.load_img()
+        self.initUI()
+        self.player = Player(self.CELL_SIZE, self)
+
+    def initUI(self):
+        self.setWindowTitle("Power up !")
+        self.setFixedSize(320, 320)
+
+        layout = QVBoxLayout()
+        self.background = []
+        self.create_background()
+
+        self.setLayout(layout)
+
+    def create_background(self):
+        for img in self.background:
+            img.deleteLater()
+        self.background = []
+
+        for i in range(10):
+            for j in range(10):
+                ground = QLabel(self)
+                pixmap = self.tile_images['gress']
+                ground.setPixmap(pixmap)
+                ground.resize(pixmap.width(), pixmap.height())
+                ground.move(self.CELL_SIZE * i, self.CELL_SIZE * j)
+                self.background.append(ground)
 
 
 
