@@ -3,8 +3,8 @@
 
 All games in Mini Game Hub efficiently utilize inter-process communication (IPC) to **provide a graphical user interface (GUI)**.
 #### Development environment
-- Front-end : python-PyQt5
-- Core Logic / Engine : C++
+- UI : python-PyQt5
+- Core Logic : C++
 
 ![main](https://github.com/kookjd7759/Mini-game-hub/blob/main/image/screenShot/main.png?raw=true)
 
